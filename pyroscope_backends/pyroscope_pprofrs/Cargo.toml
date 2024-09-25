@@ -15,7 +15,7 @@ readme = "README.md"
 
 
 [dependencies]
-pprof = "0.12"
+pprof = { git = 'https://github.com/Erigara/pprof-rs.git', branch = 'fix_pointer_align' }
 pyroscope = { version = "0.5.7", path = "../../", default-features = false }
 thiserror ="1.0"
 log = "0.4"
