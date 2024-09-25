@@ -9,15 +9,15 @@ version = "0.2.7"
 edition = "2021"
 license = "Apache-2.0"
 homepage = "https://pyroscope.io"
-documentation  = "https://docs.rs/pyroscope"
+documentation = "https://docs.rs/pyroscope"
 repository = "https://github.com/pyroscope-io/pyroscope-rs"
 readme = "README.md"
 
 
 [dependencies]
-pprof = "0.12"
+pprof = { git = 'https://github.com/Erigara/pprof-rs.git', branch = 'fix_pointer_align' }
 pyroscope = { version = "0.5.7", path = "../../", default-features = false }
-thiserror ="1.0"
+thiserror = "1.0"
 log = "0.4"
 
 [features]
@@ -25,6 +25,6 @@ default = ["pyroscope/default"]
 frame-pointer = ["pprof/frame-pointer"]
 
 [target.aarch64-apple-darwin.dependencies]
-pprof = { version = "0.12", features = ["frame-pointer"] }
-
-
+pprof = { git = 'https://github.com/Erigara/pprof-rs.git', branch = 'fix_pointer_align', features = [
+    "frame-pointer",
+] }
